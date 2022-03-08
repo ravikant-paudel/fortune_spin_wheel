@@ -1,5 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'dart:math' as _math;
 part of 'wheel.dart';
 
 Offset _calculateWheelOffset(BoxConstraints constraints, TextDirection textDirection) {
@@ -47,10 +45,7 @@ class _WheelData {
 class FortuneWheel extends StatefulWidget {
   final List<FortuneItem> items;
 
-  const FortuneWheel({
-    Key? key,
-    required this.items,
-  }) : super(key: key);
+  const FortuneWheel({Key? key, required this.items}) : super(key: key);
 
   @override
   State<FortuneWheel> createState() => _FortuneWheelState();
