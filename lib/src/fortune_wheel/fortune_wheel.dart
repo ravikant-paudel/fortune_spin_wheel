@@ -76,12 +76,12 @@ class _WheelData {
   });
 }
 
-class FortuneWheelPage extends StatefulWidget {
+class FortuneWheel extends StatefulWidget {
   @override
-  State<FortuneWheelPage> createState() => _FortuneWheelPageState();
+  State<FortuneWheel> createState() => _FortuneWheelState();
 }
 
-class _FortuneWheelPageState extends State<FortuneWheelPage> with SingleTickerProviderStateMixin {
+class _FortuneWheelState extends State<FortuneWheel> with SingleTickerProviderStateMixin {
   late final AnimationController _animationController;
   late final Animation<double> _rotationAnimation;
 
