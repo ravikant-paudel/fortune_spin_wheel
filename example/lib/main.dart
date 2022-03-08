@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fortune_wheel_example/spinner_example.dart';
+import 'package:flutter_fortune_wheel_example/example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SpinnerExample(),
+      home: ExamplePage(),
     );
   }
 }
