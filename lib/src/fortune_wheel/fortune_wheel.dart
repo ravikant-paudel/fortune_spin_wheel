@@ -44,7 +44,7 @@ class _WheelData {
   });
 }
 
-class FortuneWheel extends StatelessWidget {
+class FortuneWheel extends StatefulWidget {
   final List<FortuneItem> items;
 
   const FortuneWheel({
@@ -53,20 +53,25 @@ class FortuneWheel extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<FortuneWheel> createState() => _FortuneWheelState();
+}
+
+class _FortuneWheelState extends State<FortuneWheel> {
+  @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
         final wheelData = _WheelData(
           constraints: constraints,
-          itemCount: items.length,
+          itemCount: widget.items.length,
           textDirection: Directionality.of(context),
         );
 
         final transformedItems = [
-          for (var i = 0; i < items.length; i++)
+          for (var i = 0; i < widget.items.length; i++)
             TransformedFortuneItem(
-              item: items[i],
-              angle: _calculateSliceAngle(i, items.length),
+              item: widget.items[i],
+              angle: _calculateSliceAngle(i, widget.items.length),
               offset: wheelData.offset,
             ),
         ];
