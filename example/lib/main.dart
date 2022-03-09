@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fortune_wheel_example/example.dart';
+import 'package:flutter_fortune_wheel_example/stagger_animation.dart';
 
 void main() {
   runApp(const MyApp());
