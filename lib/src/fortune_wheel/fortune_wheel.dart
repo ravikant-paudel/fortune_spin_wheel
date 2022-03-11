@@ -15,6 +15,7 @@ double _calculateSliceAngle(int index, int itemCount) {
   // first slice starts at 90 degrees, if 0 degrees is at the top.
   // The angle offset puts the center of the first slice at the top.
   final angleOffset = -(_math.pi / 2 + anglePerChild / 2);
+  print('${childAngle + angleOffset} ====+++ Anglee');
   return childAngle + angleOffset;
 }
 
