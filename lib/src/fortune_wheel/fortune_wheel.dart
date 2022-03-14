@@ -15,7 +15,6 @@ double _calculateSliceAngle(int index, int itemCount) {
   // first slice starts at 90 degrees, if 0 degrees is at the top.
   // The angle offset puts the center of the first slice at the top.
   final angleOffset = -(_math.pi / 2 + anglePerChild / 2);
-  print('${childAngle + angleOffset} ====+++ Anglee');
   return childAngle + angleOffset;
 }
 
@@ -43,31 +42,26 @@ class _WheelData {
   });
 }
 
-class FortuneWheel extends StatefulWidget {
+class FortuneWheel extends StatelessWidget {
   final List<FortuneItem> items;
 
   const FortuneWheel({Key? key, required this.items}) : super(key: key);
 
-  @override
-  State<FortuneWheel> createState() => _FortuneWheelState();
-}
-
-class _FortuneWheelState extends State<FortuneWheel> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
         final wheelData = _WheelData(
           constraints: constraints,
-          itemCount: widget.items.length,
+          itemCount: items.length,
           textDirection: Directionality.of(context),
         );
 
         final transformedItems = [
-          for (var i = 0; i < widget.items.length; i++)
+          for (var i = 0; i < items.length; i++)
             TransformedFortuneItem(
-              item: widget.items[i],
-              angle: _calculateSliceAngle(i, widget.items.length),
+              item: items[i],
+              angle: _calculateSliceAngle(i, items.length),
               offset: wheelData.offset,
             ),
         ];
